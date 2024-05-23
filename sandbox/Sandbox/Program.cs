@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.CompilerServices;
 
 class Program
 {
@@ -9,5 +10,14 @@ class Program
 
         fred.EasternStyleName();
         steve.WesternStyleName();
+
+
+        Bank bank = new Bank();
+
+        Console.WriteLine($"You have ${bank.GetAccountBalance()}");
+
+        bank.Withdraw();
+
+        Console.WriteLine($"You have ${bank.GetAccountBalance()}");
     }
 }
