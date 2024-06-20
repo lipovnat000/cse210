@@ -1,7 +1,7 @@
 class Circle : Shape {
     private double _radius;
 
-    public Circle() {
+    public Circle(string color) : base(color) {
         _radius = 5.0;
     }
 

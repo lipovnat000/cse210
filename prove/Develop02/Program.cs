@@ -23,9 +23,6 @@ class Program
             Console.Write("What would you like to do? ");
             choice = int.Parse(Console.ReadLine());
 
-            switch (choice) {
-                case 1:
-                    Journal.WriteEntry()
             if (choice == 1) {
 
                 if (string.IsNullOrWhiteSpace(entry)) {

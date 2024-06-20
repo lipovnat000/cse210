@@ -4,19 +4,19 @@ class Program
 {
     static void Main(string[] args)
     {
-        Square square = new Square();
+        Square square = new Square("Red");
         square.SetColor("Blue");
         Console.WriteLine("Square: ");
         Console.WriteLine($"Color: {square.GetColor()}");
         Console.WriteLine($"Area: {square.GetArea()}\n");
 
-        Rectangle rectangle = new Rectangle();
+        Rectangle rectangle = new Rectangle("red");
         rectangle.SetColor("Green");
         Console.WriteLine("Rectangle: ");
         Console.WriteLine($"Color: {rectangle.GetColor()}");
         Console.WriteLine($"Area: {rectangle.GetArea()}\n");
 
-        Circle circle = new Circle();
+        Circle circle = new Circle("red");
         circle.SetColor("Yellow");
         Console.WriteLine("Circle: ");
         Console.WriteLine($"Color: {circle.GetColor()}");

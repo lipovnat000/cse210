@@ -1,16 +1,16 @@
 class Shape {
     private string _color;
 
-    public Shape() {
-        this._color = "Red";
+    public Shape(string color) {
+        _color = color;
     }
 
     public string GetColor() {
-        return this._color;
+        return _color;
     }
 
     public void SetColor(string color) {
-        this._color = color;
+        _color = color;
     }
 
     public virtual double GetArea() {
