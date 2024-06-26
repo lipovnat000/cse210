@@ -6,11 +6,15 @@ class Program
 {
     static void Main(string[] args)
     {
+        string filename = "journal.txt";
+
         Console.Write("What is the filename (without extension)? Enter the name of a new file if you want to create one: ");
-        string filename = Console.ReadLine();
+        filename = Console.ReadLine();
 
         Journal journal = new Journal(filename);
+
         string entry = "";
+        string prompt = null;
 
         int choice = 0;
 
@@ -26,11 +30,13 @@ class Program
             choice = int.Parse(Console.ReadLine());
 
             if (choice == 1) {
+                prompt = journal.GeneratePrompt();
+                Console.WriteLine(prompt);
                 entry = Console.ReadLine();
                 if (string.IsNullOrWhiteSpace(entry)) {
                     break;
                 } else {
-                    journal.AddEntry(entry);
+                    journal.AddEntry(entry, prompt);
                 }
             } 
             else if (choice == 2) {
