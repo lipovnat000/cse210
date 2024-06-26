@@ -1,23 +1,29 @@
 using System;
+using System.Runtime.CompilerServices;
 
 class Journal {
 
-    public string name;
     List<string> entries = new List<string>();
+    string filename;
+
+    public Journal(string filename) {
+        this.filename = filename;
+    }
 
     public void AddEntry(string entry) {
         entries.Add($"{DateTime.Now.ToString("MM-dd-yyyy")}: {entry}");
     }
 
-    public void openFile(string filename) {
-        File.OpenRead($"{filename}.txt");
+    public void LoadFile() {
+        File.OpenRead(filename);
+        entries = File.ReadAllLines(filename).ToList();
     }
 
-    public void SaveToFile(string filename) {
-        File.AppendAllLines($"{filename}.txt", entries);
+    public void SaveToFile() {
+        File.AppendAllLines(filename, entries);
     }
 
-    public void DisplayAll(string filename) {
+    public void DisplayAll() {
         foreach (string entry in entries) {
             Console.WriteLine(entry);
         }

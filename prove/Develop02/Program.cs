@@ -6,9 +6,11 @@ class Program
 {
     static void Main(string[] args)
     {
-        Journal journal = new Journal();
+        Console.Write("What is the filename (without extension)? Enter the name of a new file if you want to create one: ");
+        string filename = Console.ReadLine();
+
+        Journal journal = new Journal(filename);
         string entry = "";
-        string filename = "";
 
         int choice = 0;
 
@@ -32,9 +34,11 @@ class Program
                 }
             } 
             else if (choice == 2) {
-                journal.DisplayAll(filename);
+                journal.DisplayAll();
+            } else if (choice == 3) {
+                journal.LoadFile();
             } else if (choice == 4) {
-                journal.SaveToFile(filename);
+                journal.SaveToFile();
             }
        }while (choice != 5);
     }
