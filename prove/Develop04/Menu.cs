@@ -55,7 +55,9 @@ class Menu(){
                 return false;
             default:
                 // Invalid option, display error message
+                Console.Clear();
                 Console.WriteLine("Invalid option please try again.");
+                Thread.Sleep(1500);
                 return true;
         }
     }
