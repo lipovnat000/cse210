@@ -1,9 +1,11 @@
-class Menu(){
+class Menu{
 
     private string[] menuOptions = {
-        "Breathing Activity",
-        "Reflecting Activity",
-        "Listing Activity",
+        "Create New Goal",
+        "List Goals",
+        "Save Goals",
+        "Load Goals",
+        "Record Event",
         "Quit"
     };
 
@@ -35,29 +37,38 @@ class Menu(){
     public bool Execute(int choice){
         switch (choice){
             case 1:
-                // Create an instance of Breathing class and run it
-                Breathing breathing = new Breathing();
-                breathing.Run();
+                // Create an instance of Goal class and run it
+                Goal goal = new Goal();
+                goal.CreateGoalSelect();
                 return true;
             case 2:
-                // Create an instance of Reflecting class and run it
-                Reflecting reflecting = new Reflecting();
-                reflecting.Run();
+                // Create an instance of List class and run it
+                List list = new List();
+                list.Run();
                 return true;
             case 3:
-                // Create an instance of Listing class and run it
-                Listing listing = new Listing();
-                listing.Run();
+                // Create an instance of Save class and run it
+                Save save = new Save();
+                save.Run();
                 return true;
             case 4:
+                // Create an instance of Load class and run it
+                Load load = new Load();
+                load.Run();
+                return true;
+            case 5:
+                // Create an instance of Record class and run it
+                Record record = new Record();
+                record.Run();
+                return true;
+            case 6:
                 // Quit the program
                 Console.WriteLine("Goodbye!");
                 return false;
             default:
-                // Invalid option, display error message
+                // Invalid option, display error message    
                 Console.WriteLine("Invalid option please try again.");
                 return true;
         }
     }
-
 }
