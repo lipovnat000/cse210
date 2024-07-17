@@ -1,42 +1,17 @@
 class Goal{
 
-    public string name;
-    public string description;
-    public int points;
-    public bool completed;
-    public string type;
-
-
-    public Goal(){}
+    protected string name;
+    protected string description;
+    protected int points;
+    protected bool completed;
+    protected string type;
 
     public Goal(string type, string name, string description, int points, bool completed){
-        this.type = type;
         this.name = name;
         this.description = description;
         this.points = points;
         this.completed = completed;
-    }
-
-    public virtual Goal CreateGoalSelect(){
-        Console.WriteLine("The types of goals are: ");
-        Console.WriteLine("1. Simple Goal");
-        Console.WriteLine("2. Eternal Goal");
-        Console.WriteLine("3. Checklist Goal");
-        Console.Write("Which would you like to create? ");
-        type = Console.ReadLine();
-
-        if (type == "1"){
-            SimpleGoal simple = new SimpleGoal();
-            simple.NewGoal();
-        } else if (type == "2"){
-            EternalGoal eternal = new EternalGoal();
-            eternal.NewGoal();
-        } else if (type == "3"){
-            ChecklistGoal checklist = new ChecklistGoal();
-            checklist.NewGoal();
-        }
-
-        return this;
+        this.type = type;
     }
 
     public virtual void DisplayGoal(){
@@ -46,4 +21,37 @@ class Goal{
             Console.WriteLine($"[ ] {name} ({description})");
         }
     }
+
+    public virtual void IsComplete(bool complete) {
+        completed = complete;
+    }
+
+    public bool GetCompleted() {
+        return completed;
+    }
+
+    public string GetName() {
+        return name;
+    }
+
+    public string GetGoalType() {
+        return type;
+    }
+
+    public string GetDescription() {
+        return description;
+    }
+
+    public virtual int GetPoints() {
+        return points;
+    }
+
+    public virtual int GetTimes() {
+        return 0;
+    }
+
+    public virtual int GetBonus() {
+        return 0;
+    }
+
 }

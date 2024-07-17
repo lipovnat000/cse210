@@ -34,32 +34,22 @@ class Menu{
         }
     }
 
-    public bool Execute(int choice){
+    public bool Execute(int choice, GoalList goals){
         switch (choice){
             case 1:
-                // Create an instance of Goal class and run it
-                Goal goal = new Goal();
-                goal.CreateGoalSelect();
+                goals.AppendGoal();
                 return true;
             case 2:
-                // Create an instance of List class and run it
-                List list = new List();
-                list.Run();
+                goals.ListGoals();
                 return true;
             case 3:
-                // Create an instance of Save class and run it
-                Save save = new Save();
-                save.Run();
+                goals.Save();
                 return true;
             case 4:
-                // Create an instance of Load class and run it
-                Load load = new Load();
-                load.Run();
+                goals.Load();
                 return true;
             case 5:
-                // Create an instance of Record class and run it
-                Record record = new Record();
-                record.Run();
+                goals.RecordEvent();
                 return true;
             case 6:
                 // Quit the program
