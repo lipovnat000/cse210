@@ -1,9 +1,13 @@
-using System;
-
-class Program
+public class Program
 {
-    static void Main(string[] args)
+    public static void Main()
     {
-        Console.WriteLine("Hello FinalProject World!");
+        BlockManager blockManager = new BlockManager();
+        Palette palette = new Palette();
+
+        blockManager.LoadBlocksFromFile("color_blocks.txt", "greyscale_blocks.txt");
+
+        Menu menu = new Menu(blockManager, palette);
+        menu.Start();
     }
 }
